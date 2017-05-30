@@ -1,9 +1,18 @@
+#제외 할 폴더
+.git/
 .gradle/
+.idea/
+.settings/
 bin/
 build/
 logs/
-.idea/
-.settings/
+gradle
+
+# 파일 제외
+.classpath
+.project
+local.properties
+settings.gradle
 
 
 !src/main/java/
