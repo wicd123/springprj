@@ -13,6 +13,9 @@ gradle
 .project
 local.properties
 settings.gradle
+gradlew
+gradlew.bat
+
 
 
 !src/main/java/
@@ -28,3 +31,4 @@ src/main/resources/*
 !src/test/java/
 src/test/java/*
 !src/test/java/java24/
+/gradle
