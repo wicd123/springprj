@@ -1,22 +1,28 @@
-# Compiled class file
-*.class
+gradle/
+.git/
+.gradle/
+.idea/
+.settings/
+bin/
+build/
+logs/
 
-# Log file
-*.log
+# 파일 제외
+.classpath
+.project
+local.properties
+settings.gradle
 
-# BlueJ files
-*.ctxt
+!src/main/java/
+src/main/java/*
+!src/main/java/java24/
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+!src/main/resources/
+src/main/resources/*
+!src/main/resources/*.xml
+!src/main/resources/*.properties
+!src/main/resources/java24/
 
-# Package Files #
-*.jar
-*.war
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+!src/test/java/
+src/test/java/*
+!src/test/java/java24/
