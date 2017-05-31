@@ -111,7 +111,7 @@
                     GROUP BY boardcd, boardnm, UseYN
                     ORDER BY boardcd DESC
                 ) a
-            )
+            )temp
         WHERE r BETWEEN #{start} AND #{end}
     </select>  
     

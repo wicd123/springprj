@@ -6,7 +6,7 @@
 bin/
 build/
 logs/
-gradle
+gradle/
 
 # 파일 제외
 .classpath
