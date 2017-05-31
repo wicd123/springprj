@@ -3,72 +3,60 @@ package java24.board.infc;
 import java.util.HashMap;
 import java.util.List;
 
-import java.util.HashMap;
-import java.util.List;
-
-import org.apache.commons.collections.map.HashedMap;import java24.board.model.ModelArticle;
+import java24.board.model.ModelArticle;
 import java24.board.model.ModelAttachfile;
 import java24.board.model.ModelBoard;
 import java24.board.model.ModelComments;
 public interface IBoard {
-	String getBoardName(String boardcd);
-    ModelBoard getBoardOne(String boardcd);
-    List<ModelBoard> getBoardList();
-    List<ModelBoard> getBoardListResultMap();
+	String getBoardName(String boardcd) throws Exception;
+    ModelBoard getBoardOne(String boardcd) throws Exception;
+    List<ModelBoard> getBoardList() throws Exception;
+    List<ModelBoard> getBoardListResultMap() throws Exception;
     
     //??
-    List<HashMap<String,ModelBoard>> getBoardCustomMap();
+    List<HashMap<String,ModelBoard>> getBoardCustomMap() throws Exception;
     
-    int insertBoard(ModelBoard board);
-    int updateBoard(ModelBoard searchValue, ModelBoard updateValue);
-    int deleteBoard(ModelBoard board);
+    int insertBoard(ModelBoard board) throws Exception;
+    int updateBoard(ModelBoard searchValue, ModelBoard updateValue) throws Exception;
+    int deleteBoard(ModelBoard board) throws Exception;
     
-    ModelBoard getBoardSearch(ModelBoard board);
-    ModelBoard getBoardPaging(ModelBoard board, int start, int end);
+    ModelBoard getBoardSearch(ModelBoard board) throws Exception;
+    ModelBoard getBoardPaging(ModelBoard board, int start, int end) throws Exception;
     
-    int insertBoardList(List<ModelBoard> board);
+    int insertBoardList(List<ModelBoard> board) throws Exception;
     
-    ModelComments getComment(int commentNo);
-    ModelComments getCommentList(int articleNo);
-    int insertComment(ModelComments comment);
-    int updateComment(ModelComments searchValue, ModelComments updateValue);
-    int deleteComment(ModelComments comment);
+    ModelComments getComment(int commentNo) throws Exception;
+    ModelComments getCommentList(int articleNo) throws Exception;
+    int insertComment(ModelComments comment) throws Exception;
+    int updateComment(ModelComments searchValue, ModelComments updateValue) throws Exception;
+    int deleteComment(ModelComments comment) throws Exception;
    
 	//Article
-	int getArticleTotalRecord(HashMap boardcd);
+	int getArticleTotalRecord(HashMap boardcd) throws Exception;
 	
-	List<ModelBoard> getArticleList(HashMap boardcd);
+	List<ModelBoard> getArticleList(HashMap boardcd) throws Exception;
 	
-	ModelArticle getArticle(int articleNo);
+	ModelArticle getArticle(int articleNo) throws Exception;
 	
-	int insertArticle(ModelArticle boardcd);
+	int insertArticle(ModelArticle boardcd) throws Exception;
 	
-	int updateArticle(HashMap updateValue);
+	int updateArticle(HashMap updateValue) throws Exception;
 	
-	int deleteArticle(ModelArticle boardcd);
-	int increaseHit(int articleNo);
+	int deleteArticle(ModelArticle boardcd) throws Exception;
+	int increaseHit(int articleNo) throws Exception;
 	
-	ModelArticle getNextArticle(HashMap boardcd);
+	ModelArticle getNextArticle(HashMap boardcd) throws Exception;
 	
-	ModelArticle getPrevArticle(HashMap boardcd);
+	ModelArticle getPrevArticle(HashMap boardcd) throws Exception;
 	
-	ModelAttachfile getAttachFile(int attachFileNo);
+	ModelAttachfile getAttachFile(int attachFileNo) throws Exception;
 	
-	List<ModelBoard> getAttachFileList(int articleNo);
+	List<ModelBoard> getAttachFileList(int articleNo) throws Exception;
 	
-	int insertAttachFile(ModelAttachfile filename);
+	int insertAttachFile(ModelAttachfile filename) throws Exception;
 	
-	int deleteAttachFile(ModelAttachfile attachfileno);
+	int deleteAttachFile(ModelAttachfile attachfileno) throws Exception;
 	
-	int getComment(ModelComments commentNO);
-	
-	List <ModelBoard>  getCommentList(ModelComments articleNo);
-	
-	int insertComment(ModelComments articleno);
-	
-	int updateComment();
-	
-	int deleteComment(ModelComments commentno);
 	
 	
 	
