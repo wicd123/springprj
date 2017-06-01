@@ -23,6 +23,7 @@ public class DaoBoard implements IDaoBoard {
     
     @Override
     public List<String> getBoardName(String boardcd) throws Exception {
+        
         List<String> result = null;
         result = session.selectList("mapper.mysql.mapperBoard.getBoardName", boardcd);
         return result;

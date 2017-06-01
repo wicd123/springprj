@@ -40,6 +40,7 @@ public class ServiceBoardTest {
     
     @Test
     public void testGetBoardOne() throws Exception {
+        
         List<ModelBoard> result;
         result = service.getBoardOne("data");
         assertSame(result.size(), 1);

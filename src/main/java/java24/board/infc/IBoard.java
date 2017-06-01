@@ -8,6 +8,7 @@ import java24.board.model.ModelAttachfile;
 import java24.board.model.ModelBoard;
 import java24.board.model.ModelComments;
 public interface IBoard {
+    
 	List<String> getBoardName(String boardcd) throws Exception;
     List<ModelBoard> getBoardOne(String boardcd) throws Exception;
     List<ModelBoard> getBoardList() throws Exception;

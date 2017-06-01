@@ -27,6 +27,7 @@ public class ServiceBoard implements IServiceBoard {
     
     @Override
     public List<String> getBoardName(String boardcd) throws Exception {
+        
         List<String> result = null;
         try{
             result = dao.getBoardName(boardcd);
