@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class ModelArticle {
     
-	private String 		articleno	= null;	//articleno` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	private Integer 		articleno	= null;	//articleno` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 	private String 		boardcd		= "";	//boardcd` VARCHAR(20) NULL DEFAULT NULL,
 	private String			 title			= "";		//title` VARCHAR(200) NOT NULL,
 	private String 		content		= "";			//content` MEDIUMTEXT NULL,
@@ -17,10 +17,10 @@ public class ModelArticle {
 	private String 		UpdateUID	= "";	//UpdateUID` VARCHAR(40) NULL DEFAULT NULL,
 	private String 		UpdateDT 	=null;	//UpdateDT` DATETIME NULL DEFAULT NULL,
 	//
-	public String getArticleno() {
+	public Integer getArticleno() {
 		return articleno;
 	}
-	public void setArticleno(String articleno) {
+	public void setArticleno(Integer articleno) {
 		this.articleno = articleno;
 	}
 	public String getBoardcd() {
