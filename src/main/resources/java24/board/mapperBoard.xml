@@ -5,7 +5,7 @@
 <mapper namespace="mapper.mysql.mapperBoard">
     
     <select id="getBoardName" parameterType="string" resultType="string">        
-        SELECT"src/main/resources/java23/mybatis/mapperBook.xml" boardnm
+        SELECT boardnm
           FROM TB_Bbs_Board
          WHERE boardcd = #{boardcd}
     </select>
@@ -85,17 +85,17 @@
           FROM TB_Bbs_Board
          WHERE 1 =1 
            <if  test="boardcd != null and boardcd != ''">
-           AND boardcd LIKE '%' || #{boardcd} || '%'
+           AND boardcd LIKE concat('%', #{boardcd}, '%')
            </if>
            <if  test="boardnm != null and boardnm != ''">
-           AND boardnm LIKE '%' || #{boardnm} || '%'
+           AND boardnm LIKE concat('%', #{boardnm}, '%')
            </if>
     </select>
     
     <select id="getBoardPaging"  parameterType="hashmap"  resultType="ModelBoard">
         SELECT boardcd, boardnm, UseYN
         FROM (
-            SELECT rownum r, a.* 
+            SELECT @RNUM := @RNUM + 1 AS r, a.* 
                 FROM (
                     SELECT 
                         boardcd, boardnm, UseYN
@@ -105,13 +105,13 @@
                         <if test="boardcd != null and boardcd != ''">
                         AND boardcd = #{boardcd}
                         </if>
-                        <if test="boardnm != null and boardnm != ''">
+                        <if test="searchWord != null and searchWord != ''">
                         AND boardnm LIKE #{searchWord} 
                         </if>
                     GROUP BY boardcd, boardnm, UseYN
                     ORDER BY boardcd DESC
-                ) a
-            )temp
+                ) a, (SELECT @RNUM := 0) b
+            ) temp
         WHERE r BETWEEN #{start} AND #{end}
     </select>  
     
