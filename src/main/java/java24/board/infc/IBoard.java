@@ -13,7 +13,6 @@ public interface IBoard {
     List<ModelBoard> getBoardList() throws Exception;
     List<ModelBoard> getBoardListResultMap() throws Exception;
     
-    //??
     List<HashMap<String,Object>> getBoardCustomMap() throws Exception;
     
     int insertBoard(ModelBoard board) throws Exception;
