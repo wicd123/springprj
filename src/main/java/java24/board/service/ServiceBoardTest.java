@@ -22,13 +22,14 @@ public class ServiceBoardTest {
     @BeforeClass
     public static void setUpBeforeClass() throws Exception {
         try {
-            ApplicationContext context = new ClassPathXmlApplicationContext("classpath:Java24/board/ApplicationContext.xml");
-
-//        ApplicationContext context = new ClassPathXmlApplicationContext(log4jfile.getAbsolutePath());
+            ApplicationContext context = new ClassPathXmlApplicationContext(
+                    "classpath:Java24/board/ApplicationContext.xml");
+            
+            // ApplicationContext context = new ClassPathXmlApplicationContext(log4jfile.getAbsolutePath());
             service = context.getBean("serviceboard", IServiceBoard.class);
         } catch (Exception e) {
             // TODO Auto-generated catch block
-             e.printStackTrace();
+            e.printStackTrace();
         }
     }
     
@@ -129,7 +130,7 @@ public class ServiceBoardTest {
         board.add(board2);
         int result = service.insertBoardList(board);
         assertSame(result, 2);
-           
+        
     }
     
     @Test
@@ -216,7 +217,7 @@ public class ServiceBoardTest {
     }
     
     @Test
-    public void testGetAttachFile() throws Exception  {
+    public void testGetAttachFile() throws Exception {
         fail("Not yet implemented");
     }
     
@@ -226,7 +227,7 @@ public class ServiceBoardTest {
     }
     
     @Test
-    public void testInsertAttachFile() throws Exception  {
+    public void testInsertAttachFile() throws Exception {
         fail("Not yet implemented");
     }
     
