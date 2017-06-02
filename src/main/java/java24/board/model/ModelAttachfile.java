@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Date;
 
 public class ModelAttachfile {
-private Integer attachfilen= null; //`attachfileno` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+private Integer attachfileno= null; //`attachfileno` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 private String filename = ""; //`filename` VARCHAR(50) NOT NULL,
 private String filetype = ""; //`filetype` VARCHAR(30) NULL DEFAULT NULL,
 private Integer filesize = null; //`filesize` INT(11) NULL DEFAULT NULL,
@@ -16,11 +16,11 @@ private String UpdateUID = ""; //`UpdateUID` VARCHAR(40) NULL DEFAULT NULL,
 private Date UpdateDT= null; //`UpdateDT` DATETIME NULL DEFAULT NULL,
 private Byte[] imageData = null; //`imageData` LONGBLOB NULL,
 
-public Integer getAttachfilen() {
-return attachfilen;
+public Integer getAttachfileno() {
+return attachfileno;
 }
-public void setAttachfilen(Integer attachfilen) {
-this.attachfilen = attachfilen;
+public void setAttachfileno(Integer attachfileno) {
+this.attachfileno = attachfileno;
 }
 public String getFilename() {
 return filename;
@@ -84,7 +84,7 @@ this.imageData = imageData;
 }
 @Override
 public String toString() {
-return "ModelAttachfile [attachfilen=" + attachfilen + ", filename="
+return "ModelAttachfile [attachfileno=" + attachfileno + ", filename="
 + filename + ", filetype=" + filetype + ", filesize=" + filesize
 + ", articleno=" + articleno + ", UseYN=" + UseYN + ", InsertUID="
 + InsertUID + ", InsertDT=" + InsertDT + ", UpdateUID=" + UpdateUID
